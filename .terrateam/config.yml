@@ -3,17 +3,31 @@ engine:
   version: "1.12.5"
 
 hooks:
-  all:
-    pre_init:
+  plan:
+    pre:
       - type: env
         name: AWS_ACCESS_KEY_ID
-        value: "test"
+        cmd: ['echo', 'test']
       - type: env
         name: AWS_SECRET_ACCESS_KEY
-        value: "test"
+        cmd: ['echo', 'test']
       - type: env
         name: AWS_DEFAULT_REGION
-        value: "ap-south-1"
+        cmd: ['echo', 'ap-south-1']
       - type: env
         name: AWS_EC2_METADATA_DISABLED
-        value: "true"
+        cmd: ['echo', 'true']
+  apply:
+    pre:
+      - type: env
+        name: AWS_ACCESS_KEY_ID
+        cmd: ['echo', 'test']
+      - type: env
+        name: AWS_SECRET_ACCESS_KEY
+        cmd: ['echo', 'test']
+      - type: env
+        name: AWS_DEFAULT_REGION
+        cmd: ['echo', 'ap-south-1']
+      - type: env
+        name: AWS_EC2_METADATA_DISABLED
+        cmd: ['echo', 'true']
