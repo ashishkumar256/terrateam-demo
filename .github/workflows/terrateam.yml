@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+  issue_comment:
+    types: [created]
+  push:
+    branches:
+      - master
+
+jobs:
+  terrateam:
+    uses: "terrateamio/terrateam-action/.github/workflows/terrateam.yml@main"
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+      statuses: write
+      checks: write
+      actions: write
+      id-token: write
