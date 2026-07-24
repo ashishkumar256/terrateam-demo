@@ -5,12 +5,12 @@ terraform {
     region                      = "ap-south-1"
     
     # Directs traffic to your LocalStack instance
-    endpoint                    = "http://localhost:31566" 
-    
+    endpoint                    = "http://localstack.poc.svc.cluster.local:4566" 
+
     # Skips AWS-specific verification steps that break locally
     skip_credentials_validation = true
     skip_metadata_api_check     = true
     skip_region_validation      = true
-    use_path_style             = true 
+    use_path_style              = true
   }
 }
