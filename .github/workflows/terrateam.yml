@@ -28,6 +28,7 @@ jobs:
     timeout-minutes: 1440
     name: Terrateam Action
     environment: '${{ github.event.inputs.environment }}'
+    runs-on: infra
     steps:
       - uses: actions/checkout@v4
       - name: Run Terrateam Action
