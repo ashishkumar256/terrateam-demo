@@ -39,3 +39,4 @@ jobs:
           api-base-url: '${{ github.event.inputs.api-base-url }}'
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
+          KUBECONFIG: /root/.kube/config
