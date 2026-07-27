@@ -42,12 +42,20 @@ jobs:
           ls -la
       
           echo "Root kube dir:"
-          ls -la /root/.kube || true
+          if [ -d /root/.kube ]; then
+            ls -la /root/.kube
+          else
+            echo "❌ /root/.kube does not exist on the GitHub Actions runner."
+          fi
       
           echo "Home kube dir:"
-          ls -la $HOME/.kube || true
+          if [ -d "$HOME/.kube" ]; then
+            ls -la "$HOME/.kube"
+          else
+            echo "❌ $HOME/.kube does not exist on the GitHub Actions runner."
+          fi
       
-          echo "KUBECONFIG=$KUBECONFIG"
+          echo "KUBECONFIG=${KUBECONFIG:-<not set>}"
       
       - name: Run Terrateam Action
         id: terrateam
