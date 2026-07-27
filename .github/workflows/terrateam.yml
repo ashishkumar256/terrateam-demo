@@ -31,6 +31,13 @@ jobs:
     runs-on: infra
     steps:
       - uses: actions/checkout@v4
+
+      - name: Copy kubeconfig
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE"
+          cp /root/.kube/config "$GITHUB_WORKSPACE/kubeconfig"
+          chmod 600 "$GITHUB_WORKSPACE/kubeconfig"
+
       - name: Run Terrateam Action
         id: terrateam
         uses: terrateamio/action@v1
