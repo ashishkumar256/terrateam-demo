@@ -31,31 +31,6 @@ jobs:
     runs-on: infra
     steps:
       - uses: actions/checkout@v4
-
-      - name: Debug runner
-        run: |
-          echo "User: $(whoami)"
-          echo "HOME=$HOME"
-          pwd
-      
-          echo "Workspace:"
-          ls -la
-      
-          echo "Root kube dir:"
-          if [ -d /root/.kube ]; then
-            ls -la /root/.kube
-          else
-            echo "❌ /root/.kube does not exist on the GitHub Actions runner."
-          fi
-      
-          echo "Home kube dir:"
-          if [ -d "$HOME/.kube" ]; then
-            ls -la "$HOME/.kube"
-          else
-            echo "❌ $HOME/.kube does not exist on the GitHub Actions runner."
-          fi
-      
-          echo "KUBECONFIG=${KUBECONFIG:-<not set>}"
       
       - name: Run Terrateam Action
         id: terrateam
@@ -65,4 +40,3 @@ jobs:
           api-base-url: '${{ github.event.inputs.api-base-url }}'
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-          KUBECONFIG: /root/.kube/config

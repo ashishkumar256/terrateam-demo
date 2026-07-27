@@ -10,5 +10,5 @@ terraform {
 }
 
 provider "kubernetes" {
-  config_path = "/root/.kube/config"
+  # config_path = "/root/.kube/config"
 }

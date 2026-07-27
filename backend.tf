@@ -5,7 +5,7 @@ terraform {
     region                      = "ap-south-1"
     
     # Directs traffic to your LocalStack instance
-    endpoint                    = "https://6894ad6c032c-10-244-5-108-31566.papa.r.killercoda.com"
+    endpoint                    = "https://d609126e9cb0-10-244-8-213-31566.spca.r.killercoda.com"
     # Skips AWS-specific verification steps that break locally
     skip_credentials_validation = true
     skip_metadata_api_check     = true
