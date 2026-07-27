@@ -31,6 +31,24 @@ jobs:
     runs-on: infra
     steps:
       - uses: actions/checkout@v4
+
+      - name: Debug runner
+        run: |
+          echo "User: $(whoami)"
+          echo "HOME=$HOME"
+          pwd
+      
+          echo "Workspace:"
+          ls -la
+      
+          echo "Root kube dir:"
+          ls -la /root/.kube || true
+      
+          echo "Home kube dir:"
+          ls -la $HOME/.kube || true
+      
+          echo "KUBECONFIG=$KUBECONFIG"
+      
       - name: Run Terrateam Action
         id: terrateam
         uses: terrateamio/action@v1
