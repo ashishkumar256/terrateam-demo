@@ -4,8 +4,7 @@ terraform {
     key                         = "${terraform.workspace}/poc.tfstate"
     region                      = "ap-south-1"
     
-    # Directs traffic to your LocalStack instance
-    endpoint                    = "https://d609126e9cb0-10-244-8-213-31566.spca.r.killercoda.com"
+    endpoint                    = "http://localstack.aws.svc.cluster:4566"
     # Skips AWS-specific verification steps that break locally
     skip_credentials_validation = true
     skip_metadata_api_check     = true
