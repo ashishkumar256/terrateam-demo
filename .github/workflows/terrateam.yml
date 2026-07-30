@@ -24,12 +24,14 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    runs-on: ${{ fromJSON(github.event.inputs.runs_on) }}
+    # runs-on: ${{ fromJSON(github.event.inputs.runs_on) }}
     timeout-minutes: 1440
     name: Terrateam Action
     environment: '${{ github.event.inputs.environment }}'
+    runs-on: infra
     steps:
       - uses: actions/checkout@v4
+      
       - name: Run Terrateam Action
         id: terrateam
         uses: terrateamio/action@v1

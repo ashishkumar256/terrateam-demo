@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">=v1.12.3"
+  required_version = ">=v1.12.5"
 
   required_providers {
     kubernetes = {
@@ -10,5 +10,5 @@ terraform {
 }
 
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  # config_path = "/root/.kube/config"
 }
