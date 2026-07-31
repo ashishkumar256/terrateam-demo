@@ -30,8 +30,12 @@ jobs:
     environment: '${{ github.event.inputs.environment }}'
     runs-on: infra
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout Repository
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Run Terrateam Action
         id: terrateam
         uses: terrateamio/action@v1
