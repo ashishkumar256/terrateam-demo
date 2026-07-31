@@ -18,7 +18,6 @@ on:
         description: 'runs-on configuration'
         type: string
         default: '"ubuntu-latest"'
-
 jobs:
   terrateam:
     permissions:
@@ -29,6 +28,8 @@ jobs:
     name: Terrateam Action
     environment: '${{ github.event.inputs.environment }}'
     runs-on: infra
+    container:
+      image: ubuntu:22.04
     steps:
       - name: Checkout Repository
         id: checkout
