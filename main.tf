@@ -8,12 +8,6 @@ resource "kubernetes_namespace" "nginx_ns" {
   }
 }
 
-resource "kubernetes_namespace" "tmp_ns" {
-  metadata {
-    name = "tmp"
-  }
-}
-
 # ----------------------------
 # NGINX Deployment
 # ----------------------------
