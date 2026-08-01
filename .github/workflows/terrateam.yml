@@ -37,6 +37,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Prepare Kubernetes credentials
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/.k8s-sa"
+          cp /var/run/secrets/kubernetes.io/serviceaccount/token "$GITHUB_WORKSPACE/.k8s-sa/token"
+          cp /var/run/secrets/kubernetes.io/serviceaccount/ca.crt "$GITHUB_WORKSPACE/.k8s-sa/ca.crt"
+          
       - name: Run Terrateam Action
         id: terrateam
         uses: terrateamio/action@v1
