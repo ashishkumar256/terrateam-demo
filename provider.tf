@@ -10,5 +10,7 @@ terraform {
 }
 
 provider "kubernetes" {
-  # config_path = "/root/.kube/config"
+  host                   = "https://kubernetes.default.svc"
+  cluster_ca_certificate = file("${path.module}/.k8s-sa/ca.crt")
+  token                  = file("${path.module}/.k8s-sa/token")
 }
