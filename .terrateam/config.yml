@@ -36,8 +36,9 @@ drift:
   enabled: true
   schedules:
     default:
-      schedule: daily
+      tag_query: ''
+      schedule: daily      
       reconcile: false
       window:
-        start: '12:00 IST'
-        end: '12:15 IST'
+        start: '12:30 IST'
+        end: '12:45 IST'
