@@ -48,12 +48,12 @@ resource "kubernetes_deployment" "nginx" {
 
           resources {
             requests = {
-              cpu    = "1m"
-              memory = "1Mi"
+              cpu    = "10m"
+              memory = "20Mi"
             }
             limits = {
-              cpu    = "4m"
-              memory = "4Mi"
+              cpu    = "20m"
+              memory = "40Mi"
             }
           }
         }
