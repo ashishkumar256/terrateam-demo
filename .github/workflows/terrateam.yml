@@ -24,7 +24,7 @@ jobs:
       id-token: write
       contents: read
     # runs-on: ${{ fromJSON(github.event.inputs.runs_on) }}
-    timeout-minutes: 1440
+    timeout-minutes: 10
     name: Terrateam Action
     environment: '${{ github.event.inputs.environment }}'
     runs-on: infra
@@ -46,6 +46,7 @@ jobs:
       - name: Run Terrateam Action
         id: terrateam
         uses: terrateamio/action@v1
+        timeout-minutes: 5
         with:
           work-token: '${{ github.event.inputs.work-token }}'
           api-base-url: '${{ github.event.inputs.api-base-url }}'
