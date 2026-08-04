@@ -4,7 +4,8 @@ terraform {
     key                         = "${terraform.workspace}/poc.tfstate"
     region                      = "ap-south-1"
     
-    endpoint                    = "http://localstack.aws.svc.cluster:4566"
+    endpoint                    = "http://localstack.aws.svc.cluster.local:4566"
+
     # Skips AWS-specific verification steps that break locally
     skip_credentials_validation = true
     skip_metadata_api_check     = true

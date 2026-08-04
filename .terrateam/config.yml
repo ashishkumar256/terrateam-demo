@@ -31,3 +31,14 @@ hooks:
       - type: env
         name: AWS_EC2_METADATA_DISABLED
         cmd: ['echo', 'true']
+
+drift:
+  enabled: true
+  schedules:
+    default:
+      tag_query: ''
+      schedule: daily      
+      reconcile: false
+      window:
+        start: '7:15 IST'
+        end: '7:30 IST'
