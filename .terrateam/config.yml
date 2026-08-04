@@ -40,5 +40,5 @@ drift:
       schedule: daily      
       reconcile: false
       window:
-        start: '10:55 IST'
-        end: '11:10 IST'
+        start: '11:15 IST'
+        end: '11:30 IST'
