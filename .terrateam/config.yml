@@ -32,6 +32,11 @@ hooks:
         name: AWS_EC2_METADATA_DISABLED
         cmd: ['echo', 'true']
 
+dirs:
+  modules:
+    when_modified:
+      file_patterns: []
+
 drift:
   enabled: true
   schedules:
